@@ -97,8 +97,10 @@ col6.write(f'### Rata-rata Nilai Ujian Mitra KTP {input_select} Menurut Generasi
 col6.plotly_chart(plot_nilai_gen, use_container_width=True)
 
 
-
 filter_mitra = mitra[(mitra['Nilai Ujian'] >= min_ujian_slider) & 
-                           (mitra['Nilai Ujian'] <= max_ujian_slider)]
-col7.write(f'### Daftar Mitra KTP {input_select} Terpilih')
-col7.table(filter_mitra)
+                           (mitra['Nilai Ujian'] <= max_ujian_slider) &
+                           mitra['age'].between(left=min_slider, right=max_slider)]
+col7.write(f'### Daftar Mitra Terpilih KTP {input_select} Usia {min_slider} s/d {max_slider} Tahun')
+col7.dataframe(filter_mitra\
+               .loc[:,['Nama','Jenis Kelamin','age','Pendidikan','Mengikuti Pendataan BPS','Nilai Ujian']]\
+               .sort_values('Nilai Ujian',ascending=False))
