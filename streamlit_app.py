@@ -9,8 +9,8 @@ mitra = pd.read_pickle('data/mitra.pkl')
 
 # --- ROW 1 ---
 st.write('# Dasbor Mitra BPS Kota Sungai Penuh')
-st.write("""Mitra Statistik adalah ujung tombak kualitas data statistik. Seiring dengan meningkatnya 
-         kualitas dan kuantitas survei, maka diperlukan dasbor untuk merekrut Mitra terbaik di setiap pekerjaan Sensus dan Survei.""")
+st.write("""Mitra Statistik adalah ujung tombak baiknya kualitas data statistik. Seiring dengan meningkatnya 
+         kualitas dan kuantitas Sensus dan Survei, maka diperlukan dasbor untuk memudahkan merekrut Mitra terbaik di setiap pekerjaan.""")
 
 st.divider()
 col3, col4 = st.columns(2)
